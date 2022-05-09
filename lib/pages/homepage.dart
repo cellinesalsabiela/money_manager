@@ -304,7 +304,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Text(
-                            'Total Balance',
+                            'Total Uang',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 22.0,
@@ -386,7 +386,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         child: Text(
-                          "Not Enough Data to render Chart",
+                          "Data kurang lengkap",
                           style: TextStyle(
                             fontSize: 20.0,
                           ),
