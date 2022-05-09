@@ -316,7 +316,7 @@ class _HomePageState extends State<HomePage> {
                             height: 12.0,
                           ),
                           Text(
-                            'Rs $totalBalance',
+                            'Rp. $totalBalance',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 36.0,
@@ -446,7 +446,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    "Recent Transactions",
+                    "Riwayat Transaksi",
                     style: TextStyle(
                       fontSize: 32.0,
                       color: Colors.black87,
