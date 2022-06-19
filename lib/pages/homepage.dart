@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
     List tempdataSet = [];
 
     for (TransactionModel item in entireData) {
-      if (item.date.month == today.month && item.type == "Expense") {
+      if (item.date.month == today.month && item.type == "Pengeluaran") {
         tempdataSet.add(item);
       }
     }
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
     totalExpense = 0;
     for (TransactionModel data in entireData) {
       if (data.date.month == today.month) {
-        if (data.type == "Income") {
+        if (data.type == "Pemasukan") {
           totalBalance += data.amount;
           totalIncome += data.amount;
         } else {
@@ -304,7 +304,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Text(
-                            'Total Uang',
+                            'Total Keuntungan',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 22.0,
@@ -471,7 +471,7 @@ class _HomePageState extends State<HomePage> {
                     }
 
                     if (dataAtIndex.date.month == today.month) {
-                      if (dataAtIndex.type == "Income") {
+                      if (dataAtIndex.type == "Pemasukan") {
                         return incomeTile(
                           dataAtIndex.amount,
                           dataAtIndex.note,
@@ -540,7 +540,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Income",
+              "Pemasukan",
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.white70,
@@ -586,7 +586,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Expense",
+              "Pengeluaran",
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.white70,
@@ -654,7 +654,7 @@ class _HomePageState extends State<HomePage> {
                           width: 4.0,
                         ),
                         Text(
-                          "Expense",
+                          "Pengeluaran",
                           style: TextStyle(
                             fontSize: 20.0,
                           ),
@@ -716,7 +716,7 @@ class _HomePageState extends State<HomePage> {
         bool? answer = await showConfirmDialog(
           context,
           "WARNING",
-          "This will delete this record. This action is irreversible. Do you want to continue ?",
+          "Apakah Anda yakin untuk menghapusnya?",
         );
 
         if (answer != null && answer) {
@@ -750,7 +750,7 @@ class _HomePageState extends State<HomePage> {
                       width: 4.0,
                     ),
                     Text(
-                      "Credit",
+                      "Pemasukan",
                       style: TextStyle(
                         fontSize: 20.0,
                       ),

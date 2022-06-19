@@ -14,8 +14,8 @@ class AddExpenseNoGradient extends StatefulWidget {
 class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
   DateTime selectedDate = DateTime.now();
   int? amount;
-  String note = "Expence";
-  String type = "Income";
+  String note = "Pengeluaran";
+  String type = "Pemasukan";
 
   List<String> months = [
     "Jan",
@@ -59,7 +59,7 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
         ),
         children: [
           Text(
-            "\nAdd Transaction",
+            "\nTambah Pemasukkan/Pengeluaran",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 32.0,
@@ -123,7 +123,7 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
                                 width: 6.0,
                               ),
                               Text(
-                                "Enter only Numbers as Amount",
+                                "Hanya dapat memasukan angka",
                                 style: TextStyle(
                                   fontSize: 16.0,
                                 ),
@@ -173,7 +173,7 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
               Expanded(
                 child: TextField(
                   decoration: InputDecoration(
-                    hintText: "Note on Transaction",
+                    hintText: "Keterangan",
                     border: InputBorder.none,
                   ),
                   style: TextStyle(
@@ -215,49 +215,49 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
               ),
               ChoiceChip(
                 label: Text(
-                  "Income",
+                  "Pemasukan",
                   style: TextStyle(
                     fontSize: 18.0,
-                    color: type == "Income" ? Colors.white : Colors.black,
+                    color: type == "Pemasukan" ? Colors.white : Colors.black,
                   ),
                 ),
                 selectedColor: Static.PrimaryColor,
                 onSelected: (val) {
                   if (val) {
                     setState(() {
-                      type = "Income";
-                      if (note.isEmpty || note == "Expense") {
-                        note = 'Income';
+                      type = "Pemasukan";
+                      if (note.isEmpty || note == "Pengeluaran") {
+                        note = 'Pemasukan';
                       }
                     });
                   }
                 },
-                selected: type == "Income" ? true : false,
+                selected: type == "Pemasukan" ? true : false,
               ),
               SizedBox(
                 width: 8.0,
               ),
               ChoiceChip(
                 label: Text(
-                  "Expense",
+                  "Pengeluaran",
                   style: TextStyle(
                     fontSize: 18.0,
-                    color: type == "Expense" ? Colors.white : Colors.black,
+                    color: type == "Pengeluaran" ? Colors.white : Colors.black,
                   ),
                 ),
                 selectedColor: Static.PrimaryColor,
                 onSelected: (val) {
                   if (val) {
                     setState(() {
-                      type = "Expense";
+                      type = "Pengeluaran";
 
-                      if (note.isEmpty || note == "Income") {
-                        note = 'Expense';
+                      if (note.isEmpty || note == "Pemasukan") {
+                        note = 'Pengeluaran';
                       }
                     });
                   }
                 },
-                selected: type == "Expense" ? true : false,
+                selected: type == "Pengeluaran" ? true : false,
               ),
             ],
           ),
@@ -331,7 +331,7 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
                     SnackBar(
                       backgroundColor: Colors.red[700],
                       content: Text(
-                        "Please enter a valid Amount !",
+                        "Masukkan Jumlah yang valid!",
                         style: TextStyle(
                           fontSize: 16.0,
                           color: Colors.white,
@@ -342,7 +342,7 @@ class _AddExpenseNoGradientState extends State<AddExpenseNoGradient> {
                 }
               },
               child: Text(
-                "Add",
+                "Tambah",
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.w600,
