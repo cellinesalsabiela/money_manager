@@ -360,7 +360,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                //
+
+                // Widget Grafik 
                 dataSet.isEmpty || dataSet.length < 2
                     ? Container(
                         padding: EdgeInsets.symmetric(
@@ -419,6 +420,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
+                        
                         child: LineChart(
                           LineChartData(
                             borderData: FlBorderData(
