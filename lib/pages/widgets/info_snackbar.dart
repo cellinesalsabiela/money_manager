@@ -16,7 +16,7 @@ SnackBar deleteInfoSnackBar = SnackBar(
         width: 6.0,
       ),
       Text(
-        "Long Press to delete",
+        "Tekan lama untuk menghapus",
         style: TextStyle(
           fontSize: 16.0,
         ),
